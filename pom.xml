@@ -62,6 +62,7 @@
 	                    <phase>package</phase>
 	                    <goals><goal>copy</goal></goals>
 	                    <configuration>
+	                    	<jdkVersion>1.7</jdkVersion>
 	                        <artifactItems>
 	                            <artifactItem>
 	                                <groupId>com.github.jsimone</groupId>
