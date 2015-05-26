@@ -1,6 +1,7 @@
 
 # Arquivos do eclpse
 bin/
+target/
 .settings/
 .classpath
 .project
