@@ -13,7 +13,7 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 
 	<context:component-scan base-package="com.mystuff.saveddefinitions" />
 	
-	<context:property-placeholder location="classpath:../properties/*.properties"/>
+	<context:property-placeholder location="classpath:/properties/*.properties"/>
 
 	<bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
 		<property name="driverClass" value="${jdbc.driverClassName}" />
@@ -31,7 +31,7 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="datasource" />
 		<property name="configLocation">
-            <value>classpath:../hibernate.cfg.xml</value>
+            <value>classpath:/hibernate.cfg.xml</value>
         </property>
 	</bean>
 	
