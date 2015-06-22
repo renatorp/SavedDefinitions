@@ -6,32 +6,18 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
-  
-      <context-param>
-        <!-- The only significant configuration for Tapestry 5, this informs Tapestry
-of where to look for pages, components and mixins. -->
-        <param-name>tapestry.app-package</param-name>
-        <param-value>com.mystuff.saveddefinitions</param-value>
-    </context-param>
-    <context-param>
-  <param-name>contextConfigLocation</param-name>
-  <param-value>/WEB-INF/SavedDefinitions-servlet.xml</param-value>
-</context-param>
-  
-    <servlet>
-        <servlet-name>SavedDefinitions</servlet-name>
-        <servlet-class>
-            org.springframework.web.servlet.DispatcherServlet
-        </servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>SavedDefinitions</servlet-name>
-        <url-pattern>/welcome.jsp</url-pattern>
-        <url-pattern>/welcome.html</url-pattern>
-        <url-pattern>*.html</url-pattern>
-    </servlet-mapping>
-    
+
+	<context-param>
+		<!-- The only significant configuration for Tapestry 5, this informs Tapestry 
+			of where to look for pages, components and mixins. -->
+		<param-name>tapestry.app-package</param-name>
+		<param-value>com.mystuff.saveddefinitions</param-value>
+	</context-param>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/applicationContext.xml</param-value>
+	</context-param>    
+ 
     <filter>
         <filter-name>SavedDefinitionsTapestry</filter-name>
         <!-- Special filter that adds in a T5 IoC module derived from the Spring WebApplicationContext. -->

@@ -1,6 +1,5 @@
 package com.mystuff.saveddefinitions.pages;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.tapestry5.annotations.Persist;
