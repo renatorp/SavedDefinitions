@@ -91,6 +91,13 @@
 			<version>9.4-1201-jdbc41</version>
 		</dependency>
 
+		<!-- Basic Datasource for accessing postgres on heroku -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-dbcp2</artifactId>
+			<version>2.0.1</version>
+		</dependency>
+				
 		
 	</dependencies>
 
