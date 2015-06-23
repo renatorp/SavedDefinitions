@@ -17,8 +17,8 @@
 	</bean>
 	
 	<bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">	
-	    <property name="url" value="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() }"/>
-	    <property name="username" value="#{ @dbUrl.getUserInfo().split(':')[0] }"/>
+	    <property name="jdbcUrl" value="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() }"/>
+	    <property name="user" value="#{ @dbUrl.getUserInfo().split(':')[0] }"/>
 	    <property name="password" value="#{ @dbUrl.getUserInfo().split(':')[1] }"/>
 
 		<!-- these are C3P0 properties -->
