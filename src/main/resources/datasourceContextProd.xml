@@ -16,10 +16,16 @@
 	    <constructor-arg value="#{systemEnvironment['DATABASE_URL']}"/>
 	</bean>
 	
-	<bean id="datasource" class="org.apache.commons.dbcp2.BasicDataSource">
+	<bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">	
 	    <property name="url" value="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() }"/>
 	    <property name="username" value="#{ @dbUrl.getUserInfo().split(':')[0] }"/>
 	    <property name="password" value="#{ @dbUrl.getUserInfo().split(':')[1] }"/>
+
+		<!-- these are C3P0 properties -->
+        <property name="acquireIncrement" value="${c3p0.acquireIncrement}" />
+        <property name="minPoolSize" value="${c3p0.minPoolSize}" />
+        <property name="maxPoolSize" value="${c3p0.maxPoolSize}" />
+        <property name="maxIdleTime" value="${c3p0.maxIdleTime}" />
 	</bean>
 	
 </beans>
