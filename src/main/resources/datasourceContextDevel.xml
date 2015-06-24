@@ -15,10 +15,13 @@
 
 	<bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
         <!-- these are C3P0 properties -->
-        <!-- <property name="acquireIncrement" value="${c3p0.acquireIncrement}" />
+        
+        <!-- Datasource obtained from JNDI is already pooled 
+        <property name="acquireIncrement" value="${c3p0.acquireIncrement}" />
         <property name="minPoolSize" value="${c3p0.minPoolSize}" />
         <property name="maxPoolSize" value="${c3p0.maxPoolSize}" />
-        <property name="maxIdleTime" value="${c3p0.maxIdleTime}" /> -->
+        <property name="maxIdleTime" value="${c3p0.maxIdleTime}" /> 
+        -->
         
 	</bean>
 	
