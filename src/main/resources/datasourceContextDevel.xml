@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd">
 
 	<bean id="hibernateProperties"
         class="org.springframework.beans.factory.config.PropertiesFactoryBean">
@@ -13,16 +15,34 @@
           
     </bean>
 
+	<jee:jndi-lookup id="datasource" jndi-name="jdbc/SavedDefinitions" resource-ref="true" />
+
+	<!-- <bean id="datasource" class="org.springframework.jndi.JndiObjectFactoryBean">
+	    <property name="jndiName" value="java:comp/env/jdbc/DatabaseName"/>
+	</bean> -->
+
 	<bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
-        <!-- these are C3P0 properties -->
-        
-        <!-- Datasource obtained from JNDI is already pooled 
+	
+		<!-- 
+		<property name="driverClass" value="org.postgresql.Driver"/>
+	    <property name="jdbcUrl" value="jdbc:postgresql://localhost:5432/saved_definitions"/>
+	    <property name="user" value="postgres"/>
+	    <property name="password" value="postgres"/>
+	    <property name="acquireIncrement" value="1" />
+	    <property name="acquireRetryAttempts" value="3"/>
+	    <property name="acquireRetryDelay" value="300" />
+	    <property name="initialPoolSize" value="3" />
+	    <property name="maxPoolSize" value="10" /> 
+	    <property name="minPoolSize" value="3" />
+       -->
+       	
+        <!-- these are C3P0 properties
+        Datasource obtained from JNDI is already pooled 
         <property name="acquireIncrement" value="${c3p0.acquireIncrement}" />
         <property name="minPoolSize" value="${c3p0.minPoolSize}" />
         <property name="maxPoolSize" value="${c3p0.maxPoolSize}" />
         <property name="maxIdleTime" value="${c3p0.maxIdleTime}" /> 
-        -->
-        
-	</bean>
+       -->
+	</bean> 
 	
 </beans>
