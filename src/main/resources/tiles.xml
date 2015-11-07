@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+ 
+    <!-- Master -->
+    <definition name="master.page" template="/WEB-INF/public/template/master.jsp">
+        <put-attribute name="header" value="/WEB-INF/public/template/header.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/public/template/footer.jsp"/>
+    </definition>
+ 
+    <!--  Pages -->
+    <definition name="welcomePage" extends="master.page">
+        <put-attribute name="body" value="/WEB-INF/protected/welcomePage.jsp"/>
+    </definition>
+    <definition name="definitionList" extends="master.page">
+        <put-attribute name="body" value="/WEB-INF/protected/definitions.jsp"/>
+    </definition>
+    <definition name="login" extends="master.page">
+        <put-attribute name="header" value=""/>
+        <put-attribute name="footer" value=""/>
+        <put-attribute name="body" value="/WEB-INF/public/login.jsp"/>
+    </definition>
+</tiles-definitions>

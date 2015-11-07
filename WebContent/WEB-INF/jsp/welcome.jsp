@@ -8,7 +8,7 @@ body {
 }
 </style>
 </head>
-<body>${message}
+<body>
  
 	<br>
 	<br>

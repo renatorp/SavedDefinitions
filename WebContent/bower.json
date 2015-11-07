@@ -1,0 +1,24 @@
+{
+  "name": "SavedDefinitions",
+  "homepage": "https://github.com/renatorp/SavedDefinitions",
+  "authors": [
+    "renatorp <renatorp@github.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5",
+    "angular": "~1.4.7",
+    "startbootstrap-sb-admin-2": "~1.0.7"
+  }
+}

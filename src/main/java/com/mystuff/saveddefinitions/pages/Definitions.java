@@ -23,7 +23,7 @@ public class Definitions {
 	private DefinitionsService definitionsService;
 	
 	void onActivate() {
-		definitionList = definitionsService.listDefinitions();
+	//	definitionList = definitionsService.listDefinitions();
 		System.out.println("zap!!");
 	}
 	
