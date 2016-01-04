@@ -21,7 +21,7 @@
 	    <property name="jndiName" value="java:comp/env/jdbc/DatabaseName"/>
 	</bean> -->
 
-	<bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+	<!-- <bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close"> -->
 	
 		<!-- 
 		<property name="driverClass" value="org.postgresql.Driver"/>
@@ -43,6 +43,6 @@
         <property name="maxPoolSize" value="${c3p0.maxPoolSize}" />
         <property name="maxIdleTime" value="${c3p0.maxIdleTime}" /> 
        -->
-	</bean> 
+	<!-- </bean>  -->
 	
 </beans>

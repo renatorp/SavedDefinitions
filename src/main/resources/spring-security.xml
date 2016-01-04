@@ -7,6 +7,11 @@
 
 	<!-- Ajustar TUDO -->
  
+ <!-- <bean id="customAuthenticationFailureHandler"
+      class="com.mystuff.saveddefinitions.security.CustomAuthenticationFailureHandler">
+    <property name="defaultFailureUrl" value="/login"/>
+</bean> -->
+
     <security:global-method-security secured-annotations="enabled" />
  
     <security:http auto-config="true" use-expressions="true">
@@ -14,11 +19,22 @@
  		<security:access-denied-handler error-page="/login?error=403" />
  		
         <security:intercept-url pattern="/" access="permitAll" />
-        <!-- <security:intercept-url pattern="/protected/**" access="isAuthenticated()" /> -->
+        <security:intercept-url pattern="/protected/**" access="isAuthenticated()" />
  
-        <security:form-login login-page="/login" authentication-failure-url="/login?error=403" default-target-url="/protected/home" />
+<!--         	authentication-failure-handler-ref="customAuthenticationFailureHandler" 	 
+        		  -->
+        <security:form-login
+        		login-processing-url="/postlogin"
+        		username-parameter="username"
+        		password-parameter="password"
+        		authentication-failure-url="/login?error=403" 
+        		default-target-url="/protected/home"
+        		login-page="/login"
+        />
+        		<security:csrf/>
  
         <security:logout invalidate-session="true" logout-success-url="/login" logout-url="/logout" />
+
     </security:http>
  
     <security:authentication-manager>
@@ -27,6 +43,10 @@
                     data-source-ref="datasource"
                     users-by-username-query="select email, password, enabled from system_user where email = ?"
                     authorities-by-username-query="select u.email as login, u.user_role as role from system_user u where u.email = ?" />
+                  <!--   <security:user-service>
+		            <security:user name="renatorp" password="admin" authorities="ROLE_ADMIN" />
+		            <security:user name="user_2" password="password_2" authorities="ROLE_USER" /> 
+		        </security:user-service>-->
         </security:authentication-provider>
     </security:authentication-manager>
 </beans>

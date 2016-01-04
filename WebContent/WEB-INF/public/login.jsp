@@ -2,39 +2,43 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
+<style type="text/css">
+	.none{
+		display:none;
+	}
+</style>
+
 <!--login modal-->
-<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true" ng-controller="loginController">
+<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true" ng-controller="LoginController">
 <%-- <legend><spring:message code="login.header" /></legend> --%>
-        <div class="alert alert-error" ng-class="{'': displayLoginError == true, 'none': displayLoginError == false}">
-            <%-- <spring:message code="login.error" /> --%>
-        </div>
   <div class="modal-dialog">
+  
   <div class="modal-content">
       <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
           <h1 class="text-center">Login</h1>
       </div>
       <div class="modal-body">
-          <form id="login_form" class="form col-md-12 center-block" method="post" action="j_spring_security_check">
+          <form id="login_form" class="form col-md-12 center-block" method="post" action="/SavedDefinitions/postlogin">
             <div class="form-group">
-              <input name="j_username" id="j_username" type="text" class="form-control input-lg" placeholder="Email">
+              <input name="username" id="username" type="text" class="form-control input-lg" placeholder="Email">
             </div>
             <div class="form-group">
-              <input name="j_password" id="j_password" type="password" class="form-control input-lg" placeholder="Password">
+              <input name="password" id="password" type="password" class="form-control input-lg" placeholder="Password">
             </div>
+            
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            
+	        <div class="alert alert-danger" ng-class="{'': displayLoginError == true, 'none': displayLoginError == false}">
+	        	Erro
+	            <%-- <spring:message code="login.error" /> --%>
+	        </div>
             <div class="form-group">
               <button class="btn btn-primary btn-lg btn-block" onclick="document.getElementById('login_form').submit();">Sign In</button>
-              <span class="pull-right"><a href="#">Register</a></span><span><a href="#">Need help?</a></span>
             </div>
           </form>
       </div>
       <div class="modal-footer">
-          <div class="col-md-12">
-          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-		  </div>	
       </div>
   </div>
   </div>
 </div>
-
-<script src="<c:url value='/js/pages/login.js' />"></script>
