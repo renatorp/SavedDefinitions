@@ -22,4 +22,4 @@ hs_err_pid*
 /build/
 
 # arquivos de dependências baixados pelo bower
-WebContent/bower_components/
+#WebContent/bower_components/
