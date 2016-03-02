@@ -13,4 +13,9 @@ public class LoginController {
     public ModelAndView doGet() {
         return new ModelAndView("login");
     }
+    
+    @RequestMapping(value="/logout", method = {RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE, RequestMethod.PUT})
+    public ModelAndView logout() {
+        return new ModelAndView("logout");
+    }
 }

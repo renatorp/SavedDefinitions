@@ -1,4 +1,10 @@
-<!-- Navigation -->
+          
+         <!-- Form logout -->
+        <form method="post" id="logoutForm" action="${pageContext.request.contextPath}/logout" id="form-logout">
+		    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>         
+		</form>
+				
+		<!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -10,6 +16,7 @@
                 </button>
                 <a class="navbar-brand" href="index.html">Ripple Of Knowledge</a>
             </div>
+            
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
@@ -23,7 +30,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="#" onclick="submitFormLogout();"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>
@@ -70,3 +77,9 @@
             </div>
             <!-- /.navbar-collapse -->
         </nav>
+        
+        <script type="text/javascript">
+        	var submitFormLogout = function() {
+        		$("#logoutForm").submit();
+        	};
+        </script>

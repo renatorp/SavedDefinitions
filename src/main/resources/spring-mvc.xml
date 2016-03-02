@@ -53,6 +53,10 @@
                     <property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"/>
                 </bean>
                 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+                	<property name="prefix" value="/WEB-INF/protected/partials"></property>
+        			<property name="suffix" value=".html"></property>
+                </bean>
+                <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
                 	<property name="prefix" value="/WEB-INF"></property>
         			<property name="suffix" value=".jsp"></property>
                 </bean>

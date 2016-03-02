@@ -5,13 +5,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
-	<!-- Ajustar TUDO -->
- 
- <!-- <bean id="customAuthenticationFailureHandler"
-      class="com.mystuff.saveddefinitions.security.CustomAuthenticationFailureHandler">
-    <property name="defaultFailureUrl" value="/login"/>
-</bean> -->
-
     <security:global-method-security secured-annotations="enabled" />
  
     <security:http auto-config="true" use-expressions="true">
@@ -21,17 +14,16 @@
         <security:intercept-url pattern="/" access="permitAll" />
         <security:intercept-url pattern="/protected/**" access="isAuthenticated()" />
  
-<!--         	authentication-failure-handler-ref="customAuthenticationFailureHandler" 	 
-        		  -->
         <security:form-login
         		login-processing-url="/postlogin"
         		username-parameter="username"
         		password-parameter="password"
         		authentication-failure-url="/login?error=403" 
-        		default-target-url="/protected/home"
+        		default-target-url="/protected/definition"
         		login-page="/login"
         />
-        		<security:csrf/>
+        
+        <security:csrf/>
  
         <security:logout invalidate-session="true" logout-success-url="/login" logout-url="/logout" />
 

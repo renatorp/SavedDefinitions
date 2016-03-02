@@ -8,9 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value = "/")
 public class HomeController {
  
-    @RequestMapping(method = {RequestMethod.GET/*, RequestMethod.POST, RequestMethod.DELETE, RequestMethod.PUT*/})
+    @RequestMapping(method = {RequestMethod.GET})
     public String redirect(){
-//        return "redirect:/protected/home";
     	return "redirect:/protected/definition";
     }
 }
