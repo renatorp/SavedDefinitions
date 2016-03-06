@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -32,5 +33,12 @@ public class DefinitionController {
     
     private ResponseEntity<List<DefinitionDto>> returnListToUser(List<DefinitionDto> definitionList) {
         return new ResponseEntity<List<DefinitionDto>>(definitionList, HttpStatus.OK);
+    }
+    
+    @RequestMapping(value = "/{id}",method = RequestMethod.GET, produces = "application/json")
+    public ResponseEntity<DefinitionDto> find(@PathVariable("id") Integer id) {
+    	DefinitionDto dto = new DefinitionDto(null);
+    	dto.setDescription("Testeta");
+    	return new ResponseEntity<DefinitionDto>(dto, HttpStatus.OK);
     }
 }

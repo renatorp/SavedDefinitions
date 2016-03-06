@@ -4,8 +4,10 @@ DROP TABLE IF EXISTS system_user;
 CREATE TABLE definition
 (
   id SERIAL PRIMARY KEY,
-  name text,
-  definition text
+  name varchar(50),
+  definition text,
+  description varchar(200),
+  tag varchar(20)
 );
 
 CREATE TABLE system_user

@@ -7,11 +7,15 @@ public class DefinitionDto {
 	private Integer id;
 	private String name;
 	private String definition;
+	private String description;
+	private String tag;
 	
 	public DefinitionDto(Definition definition){
 		this.id = definition.getId();
 		this.name = definition.getName();
 		this.definition = definition.getDefinition();
+		this.description = definition.getDescription();
+		this.tag = definition.getTag();
 	}
 	
 	public Integer getId() {
@@ -33,6 +37,20 @@ public class DefinitionDto {
 	}
 	public void setDefinition(String definition) {
 		this.definition = definition;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getTag() {
+		return tag;
+	}
+	public void setTag(String tag) {
+		this.tag = tag;
 	}
 	
 }

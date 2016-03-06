@@ -5,10 +5,11 @@
 <html lang="pt-BR" id="ng-app" ng-app="rippleOfKnowledgeApp">
 <head>
         <%-- <title><spring:message  code="project.title" /></title> --%>
+        <title>Ripple Of Knowledge</title>
         <link href="<c:url value='/bower_components/bootstrap/dist/css/bootstrap.min.css'  />" rel="stylesheet"/>
         <link href="<c:url value='/resources/startbootstrap-sb-admin-1.0.4/css/sb-admin.css'  />" rel="stylesheet"/>
         <link href="<c:url value='/resources/startbootstrap-sb-admin-1.0.4/font-awesome/css/font-awesome.min.css'  />" rel="stylesheet"/>
-        <%-- <link href="<c:url value='/resources/css/style.css'  />" rel="stylesheet"/> --%>
+        <link href="<c:url value='/resources/css/style.css'  />" rel="stylesheet"/>
 
         <script src="<c:url value='/bower_components/jquery/dist/jquery.min.js' />"></script>
         <script src="<c:url value='/bower_components/angular/angular.min.js' />"></script>

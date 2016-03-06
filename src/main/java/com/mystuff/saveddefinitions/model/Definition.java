@@ -21,6 +21,8 @@ public class Definition implements Serializable{
 	private Integer id;
 	private String name;
 	private String definition;
+	private String description;
+	private String tag;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,4 +49,22 @@ public class Definition implements Serializable{
 	public void setDefinition(String definition) {
 		this.definition = definition;
 	}
+	
+	@Column(name = "description")
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	@Column(name = "tag")
+	public String getTag() {
+		return tag;
+	}
+	public void setTag(String tag) {
+		this.tag = tag;
+	}
+	
+	
 }

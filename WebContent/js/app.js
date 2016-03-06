@@ -11,8 +11,13 @@ rippleOfKnowledgeApp.config(['$routeProvider',
     function($routeProvider) {
       $routeProvider.
         when('/definitions', {
-          templateUrl: 'partials/definitionList',
-          controller: 'DefinitionController'
+        	templateUrl: 'partials/definitionList',
+        	controller: 'DefinitionController',
+        	activeMenu: 'home'
+        }).
+        when('/definition/:definitionId', {
+        	templateUrl: 'partials/definitionDetail',
+            controller: 'DefinitionDetailController'
         }).
         otherwise({
           redirectTo: '/definitions'
