@@ -37,7 +37,7 @@ public class DefinitionController {
     
     @RequestMapping(value = "/{id}",method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<DefinitionDto> find(@PathVariable("id") Integer id) {
-    	DefinitionDto dto = new DefinitionDto(null);
+    	DefinitionDto dto = new DefinitionDto();
     	dto.setDescription("Testeta");
     	return new ResponseEntity<DefinitionDto>(dto, HttpStatus.OK);
     }

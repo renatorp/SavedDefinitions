@@ -46,3 +46,19 @@ rokControllers.controller('HeaderController', ['$scope', '$location',
 			return $location.path().indexOf(viewLocation) != -1;
 		}
 }]);
+
+rokControllers.controller('DefinitionEditController', ['$scope', '$http', '$routeParams', 
+   function($scope, $http, $routeParams) {
+		
+	var isEdit = $routeParams.definitionId != null && $routeParams.definitionId != undefined;
+	$scope.definition = null; 
+	
+	if (isEdit) {
+		/*$http.get("definition/" + $routeParams.definitionId)
+		.success(function(data) {
+			$scope.definition = data;
+		});*/
+	}
+	
+	
+}]);

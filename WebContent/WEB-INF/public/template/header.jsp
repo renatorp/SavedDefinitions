@@ -42,7 +42,7 @@
                         <a href="#definitions"><i class="fa fa-fw fa-home"></i> Home</a>
                     </li>
                     <li ng-class="{ active: isActive('/definition/') }">
-                        <a href="charts.html"><i class="fa fa-fw fa-file"></i> New</a>
+                        <a href="#definition/new"><i class="fa fa-fw fa-file"></i> New</a>
                     </li>
                 </ul>
             </div>

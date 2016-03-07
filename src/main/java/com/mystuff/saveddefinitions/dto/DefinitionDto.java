@@ -10,6 +10,8 @@ public class DefinitionDto {
 	private String description;
 	private String tag;
 	
+	public DefinitionDto() {}
+	
 	public DefinitionDto(Definition definition){
 		this.id = definition.getId();
 		this.name = definition.getName();

@@ -15,6 +15,10 @@ rippleOfKnowledgeApp.config(['$routeProvider',
         	controller: 'DefinitionController',
         	activeMenu: 'home'
         }).
+        when('/definition/new', {
+        	templateUrl: 'partials/definitionEdit',
+        	controller: 'DefinitionEditController'
+        }).
         when('/definition/:definitionId', {
         	templateUrl: 'partials/definitionDetail',
             controller: 'DefinitionDetailController'

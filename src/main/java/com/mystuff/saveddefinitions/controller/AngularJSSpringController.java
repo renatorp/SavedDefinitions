@@ -16,4 +16,9 @@ public class AngularJSSpringController {
 	public String getDefinitionDetailPartial() {
 		return "/definition-detail";
 	}
+	
+	@RequestMapping(value = "/definitionEdit")
+	public String getDefinitionEditPartial() {
+		return "/definition-edit";
+	}
 }
