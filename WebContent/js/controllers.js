@@ -51,13 +51,13 @@ rokControllers.controller('DefinitionEditController', ['$scope', '$http', '$rout
    function($scope, $http, $routeParams) {
 		
 	var isEdit = $routeParams.definitionId != null && $routeParams.definitionId != undefined;
-	$scope.definition = null; 
+	$scope.definition = {}; 
 	
 	if (isEdit) {
-		/*$http.get("definition/" + $routeParams.definitionId)
+		$http.get("definition/" + $routeParams.definitionId)
 		.success(function(data) {
 			$scope.definition = data;
-		});*/
+		});
 	}
 	
 	

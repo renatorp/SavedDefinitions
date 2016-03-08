@@ -4,7 +4,8 @@
 
 var rippleOfKnowledgeApp = angular.module('rippleOfKnowledgeApp', [
   'ngRoute',                                                        
-  'rokControllers'
+  'rokControllers',
+  'summernote'
 ]);
 
 rippleOfKnowledgeApp.config(['$routeProvider',

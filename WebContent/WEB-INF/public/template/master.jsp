@@ -16,6 +16,12 @@
         <script src="<c:url value='/bower_components/angular-route/angular-route.js' />"></script>        
         <script src="<c:url value='/js/app.js' />"></script>
         <script src="<c:url value='/js/controllers.js' />"></script>
+        
+		<!-- summernote css/js-->
+		<link href="<c:url value='/bower_components/summernote/dist/summernote.css'  />" rel="stylesheet"/>
+		<script src="<c:url value='/bower_components/summernote/dist/summernote.js' />"></script>
+		<script src="<c:url value='/bower_components/angular-summernote/dist/angular-summernote.min.js' />"></script>
+        
     </head>
     <body>
         <div id="wrapper">
@@ -31,7 +37,7 @@
             <script src="<c:url value='/bower_components/bootstrap/dist/js/bootstrap.min.js
 ' />"></script>
         <!--<![endif]-->
- 
+        
         <tiles:insertAttribute name="footer" />
     </body>
 </html>
