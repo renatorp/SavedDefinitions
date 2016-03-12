@@ -25,13 +25,19 @@
 							<th>Name</th>
 							<th>Tag</th>
 							<th>Description</th>
+							<th>Actions</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr ng-repeat="definition in definitions" class="clickable-row" ng-click="seeDetail(definition.id)">
+						<tr ng-repeat="definition in definitions" class="clickable-row">
 							<td>{{definition.name}}</td>
 							<td>{{definition.tag}}</td>
 							<td>{{definition.description}}</td>
+							<td>
+								<a href="javascript:void(0);" ng-click="seeDetail(definition.id)" title="View" class="link-icon"><i class="fa fa-eye"></i></a>
+								<a href="javascript:void(0);" title="Edit" class="link-icon" ><i class="fa fa-pencil"></i></a>
+								<a href="javascript:void(0);" title="Delete" class="link-icon" ><i class="fa fa-trash"></i></a>
+							</td>
 						</tr>
 					</tbody>
 				</table>
