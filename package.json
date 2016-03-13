@@ -2,7 +2,7 @@
     "name": "rippleofknowledge",
     "version": "0.0.1",
     "engines": {
-        "npm": "3.3.x"
+        "node": "3.3.x"
     },
     "devDependencies": {
         "bower": "1.2.5"
