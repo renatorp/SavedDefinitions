@@ -1,0 +1,7 @@
+{
+    "name": "rippleofknowledge",
+    "version": "0.0.1",
+    "devDependencies": {
+        "bower": "1.2.5"
+    }
+}

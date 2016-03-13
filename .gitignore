@@ -23,3 +23,6 @@ hs_err_pid*
 
 # arquivos de dependências baixados pelo bower
 WebContent/bower_components/
+
+# arquivo do npm
+node_modules/
