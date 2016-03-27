@@ -25,4 +25,6 @@ hs_err_pid*
 WebContent/bower_components/
 
 # arquivo do npm
-node_modules/
+WebContent/node_modules/
+WebContent/node/
+WebContent/etc/
