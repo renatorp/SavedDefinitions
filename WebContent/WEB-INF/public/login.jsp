@@ -18,7 +18,7 @@
           <h1 class="text-center">Login</h1>
       </div>
       <div class="modal-body">
-          <form id="login_form" class="form col-md-12 center-block" method="post" action="/SavedDefinitions/postlogin">
+          <form id="login_form" class="form col-md-12 center-block" method="post" action="<c:url value='/postlogin' />">
             <div class="form-group">
               <input name="username" id="username" type="text" class="form-control input-lg" placeholder="Email">
             </div>
